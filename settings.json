@@ -22,7 +22,7 @@
     // switch b/w buffers
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
-    
+
     { "before": ["S-q>"], "commands": [":bquit"] },
 
     // splits
@@ -127,8 +127,7 @@
     {
       "before": ["g", "p", "t"],
       "commands": ["editor.action.peekTypeDefinition"]
-    },
-
+    }
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -140,7 +139,10 @@
     // toggle comment selection
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
     { "before": ["leader", "C"], "commands": ["editor.action.blockComment"] },
-    { "before": ["leader", "shift", "/"], "commands": ["editor.action.blockComment"] }
+    {
+      "before": ["leader", "shift", "/"],
+      "commands": ["editor.action.blockComment"]
+    }
   ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

@@ -1,10 +1,10 @@
 // Place your key bindings in this file to override the defaults
 [
   // REMOVE KEYBINDS
-  {
-    "key": "ctrl+shift+n",
-    "command": "-workbench.action.newWindow"
-  },
+  // {
+  //   "key": "ctrl+shift+n",
+  //   "command": "-workbench.action.newWindow"
+  // },
   {
     "key": "ctrl+shift+t",
     "command": "-workbench.action.reopenClosedEditor"
@@ -50,11 +50,6 @@
     "when": "terminalIsOpen && terminalFocus"
   },
   {
-    "key": "ctrl+l",
-    "command": "workbench.action.focus",
-    "when": "terminalIsOpen && termianlFocus"
-  },
-  {
     "key": "ctrl+n",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalIsOpen && terminalFocus"
@@ -69,7 +64,7 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminalIsOpen && terminalFocus"
   },
-  // NAVIGATE POPUPS 
+  // NAVIGATE POPUPS
   {
     "key": "ctrl+n",
     "command": "selectNextSuggestion",
@@ -163,13 +158,28 @@
     "when": "editorFocus && editorIsOpen"
   },
   {
-    "key": "shift+n",
+    "key": "ctrl+n",
     "command": "editor.action.nextMatchFindAction",
     "when": "editorFocus && findWidgetVisible"
   },
   {
-    "key": "shift+p",
+    "key": "ctrl+p",
     "command": "editor.action.previousMatchFindAction",
     "when": "editorFocus && findWidgetVisible"
   },
+  {
+    "key": "ctrl+c",
+    "command": "toggleFindCaseSensitive",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "toggleFindWholeWord",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "toggleFindRegex",
+    "when": "editorFocus && findWidgetVisible"
+  }
 ]
