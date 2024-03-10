@@ -155,5 +155,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "redhat.telemetry.enabled": false,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "git.autofetch": true
 }
