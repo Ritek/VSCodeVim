@@ -196,24 +196,41 @@
 	},
 
 	// GIT MENU
+	// Space opens file but keeps focus on workbench
+	// GIT actions can only be performed if file is open
 	{
-		"key": "ctrl+s",
+		"key": "ctrl+a",
 		"command": "git.stage",
 		"when": "focusedView == 'workbench.scm'"
 	},
 	{
-		"key": "ctrl+u",
+		"key": "ctrl+d",
 		"command": "git.unstage",
 		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+shift+a",
+		"command": "git.stageAll",
+		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "git.unstageAll",
+		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "git.stashStaged",
+		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+shift+u",
+		"command": "git.stashPop",
+		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "git.commitAllSigned",
+		"when": "focusedView == 'workbench.scm'"
 	}
-	// {
-	// 	"key": "ctrl+S ctrl+A",
-	// 	"command": "git.stageAll",
-	// 	"when": "focusedView == 'workbench.scm'"
-	// },
-	// {
-	// 	"key": "ctrl+U ctrl+A",
-	// 	"command": "git.unstageAll",
-	// 	"when": "focusedView == 'workbench.scm'"
-	// }
 ]
