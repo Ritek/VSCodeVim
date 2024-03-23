@@ -1,5 +1,16 @@
 // Place your key bindings in this file to override the defaults
 [
+	// Useful keybindings set by default
+	// ctrl + => zoom in (whole editor)
+	// ctrl - => zoom out (whole editor)
+	// yy => yank line
+	// dd => delete line
+	// cw => clear word and enter insert mode
+	// shift i => enter insert at the start of the line
+	// shift a => enter insert at the end of the line
+	// ctrl . => show code action menu
+	// ctrl shift . => toggle breadcrumbs menu
+
 	// REMOVE KEYBINDS
 	// {
 	//   "key": "ctrl+shift+n",
@@ -56,8 +67,13 @@
 		"when": "terminalIsOpen && terminalFocus"
 	},
 	{
-		"key": "ctrl+d",
+		"key": "ctrl+q",
 		"command": "workbench.action.terminal.kill",
+		"when": "terminalIsOpen && terminalFocus"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.focusActiveEditorGroup",
 		"when": "terminalIsOpen && terminalFocus"
 	},
 	// NAVIGATE POPUPS
@@ -164,7 +180,7 @@
 		"when": "editorFocus && findWidgetVisible"
 	},
 	{
-		"key": "ctrl+c",
+		"key": "ctrl+e",
 		"command": "toggleFindCaseSensitive",
 		"when": "editorFocus && findWidgetVisible"
 	},
@@ -177,5 +193,27 @@
 		"key": "ctrl+r",
 		"command": "toggleFindRegex",
 		"when": "editorFocus && findWidgetVisible"
+	},
+
+	// GIT MENU
+	{
+		"key": "ctrl+s",
+		"command": "git.stage",
+		"when": "focusedView == 'workbench.scm'"
+	},
+	{
+		"key": "ctrl+u",
+		"command": "git.unstage",
+		"when": "focusedView == 'workbench.scm'"
 	}
+	// {
+	// 	"key": "ctrl+S ctrl+A",
+	// 	"command": "git.stageAll",
+	// 	"when": "focusedView == 'workbench.scm'"
+	// },
+	// {
+	// 	"key": "ctrl+U ctrl+A",
+	// 	"command": "git.unstageAll",
+	// 	"when": "focusedView == 'workbench.scm'"
+	// }
 ]

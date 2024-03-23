@@ -1,7 +1,13 @@
 {
+	// Telemetry
+	"telemetry.telemetryLevel": "off",
+	"redhat.telemetry.enabled": false,
+
 	// Font
 	"editor.fontFamily": "JetBrains Mono",
+	// "editor.fontFamily": "FiraCode Mono",
 	"terminal.integrated.fontFamily": "JetBrains Mono",
+	// "terminal.integrated.fontFamily": "FiraCode Mono",
 	"editor.fontLigatures": true,
 
 	// Theme
@@ -12,14 +18,19 @@
 	"workbench.statusBar.visible": true,
 	"editor.minimap.enabled": false,
 	"breadcrumbs.enabled": true,
+	"terminal.integrated.defaultProfile.linux": "bash",
 
 	// Usefull settings
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.linkedEditing": true,
-	"javascript.updateImportsOnFileMove.enabled": "always",
+	"editor.wordWrap": "wordWrapColumn",
 	"update.showReleaseNotes": false,
 	"zenMode.hideLineNumbers": false,
+	"window.zoomLevel": 1,
 	"editor.mouseWheelZoom": true,
+	"git.autofetch": true,
+	"git.inputValidationLength": 72,
 	"launch": {},
 
 	// Vim style settings
@@ -29,9 +40,9 @@
 	// Vim
 	"vim.leader": "<Space>",
 	"vim.hlsearch": true,
+	"vim.inccommand": "replace",
 	"vim.normalModeKeyBindingsNonRecursive": [
 		// NAVIGATION
-
 		// switch b/w buffers
 		{ "before": ["<S-h>"], "commands": [":bprevious"] },
 		{ "before": ["<S-l>"], "commands": [":bnext"] },
@@ -62,7 +73,9 @@
 
 		// NICE TO HAVE
 		{ "before": ["leader", "w"], "commands": [":w!"] },
+		{ "before": ["leader", "W"], "commands": [":wall"] },
 		{ "before": ["leader", "q"], "commands": [":q!"] },
+		{ "before": ["leader", "Q"], "commands": [":qall"] },
 		{ "before": ["leader", "x"], "commands": [":x!"] },
 		{
 			"before": ["[", "d"],
@@ -71,6 +84,10 @@
 		{
 			"before": ["]", "d"],
 			"commands": ["editor.action.marker.next"]
+		},
+		{
+			"before": ["m", "t"],
+			"commands": ["editor.action.jumpToBracket"]
 		},
 		{
 			"before": ["<leader>", "c", "a"],
@@ -85,14 +102,31 @@
 			"commands": ["editor.action.formatDocument"]
 		},
 		{
-			"before": ["<leader>", "b"],
-			"comands": [
-				{
-					"command": ":test",
-					"args": []
-				}
-			]
+			// VSCodeVim can "prepare" replace but forces the manual mode exit
+			// to perform replacement leader => O => esc
+			"before": ["<leader>", "O"],
+			"commands": ["type", ":%s/1test1/gold/g"]
+			// 1test1
+		},
+		{
+			"before": ["<leader>", "n"],
+			"commands": ["type", ":s/"]
+		},
+		// Clear the search highlight
+		{
+			"before": ["<leader>", "/"],
+			"commands": [":noh"]
 		}
+		// Runs task defined in .../User/.vscode/task.json
+		// {
+		// 	"before": ["<leader>", "r", "t"],
+		// 	"commands": [
+		// 		{
+		// 			"command": "workbench.action.tasks.runTask",
+		// 			"args": "echo"
+		// 		}
+		// 	]
+		// }
 	],
 
 	"vim.normalModeKeyBindings": [
@@ -164,20 +198,26 @@
 			"commands": ["editor.action.blockComment"]
 		}
 	],
+
+	// Language specific options
 	"go.toolsManagement.autoUpdate": true,
-	"[typescriptreact]": {
+	"[go]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
 	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"redhat.telemetry.enabled": false,
-	"window.zoomLevel": 1,
-	"git.autofetch": true,
-	"terminal.integrated.defaultProfile.linux": "bash",
 
 	// Prettier
 	"prettier": {
@@ -190,5 +230,6 @@
 		"bracketSameLine": false,
 		"arrowParens": "always",
 		"endOfLine": "lf"
-	}
+	},
+	"editor.tabSize": 2
 }
