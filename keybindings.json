@@ -46,6 +46,10 @@
 		"key": "ctrl+t",
 		"command": "-workbench.action.showAllSymbols"
 	},
+	{
+		"key": "ctrl+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
 	// TERMINAL NAVIGATION
 	{
 		"key": "ctrl+shift+t",
@@ -194,43 +198,66 @@
 		"command": "toggleFindRegex",
 		"when": "editorFocus && findWidgetVisible"
 	},
-
 	// GIT MENU
 	// Space opens file but keeps focus on workbench
 	// GIT actions can only be performed if file is open
+	// "when": "viewContainer.workbench.view.scm.enabled" will allow git actions if SCM workbench is open even if it is not focused
+	// "when": "focusedView == 'workbench.scm'" will allow actions only if SCM workbench is focused
 	{
-		"key": "ctrl+a",
+		"key": "ctrl+s",
 		"command": "git.stage",
-		"when": "focusedView == 'workbench.scm'"
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
 	},
 	{
-		"key": "ctrl+d",
+		"key": "ctrl+s",
+		"command": "git.stageSelectedRanges",
+		"when": "activeViewlet == 'workbench.view.scm' && inDiffEditor"
+	},
+	{
+		"key": "ctrl+u",
 		"command": "git.unstage",
-		"when": "focusedView == 'workbench.scm'"
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
 	},
 	{
-		"key": "ctrl+shift+a",
-		"command": "git.stageAll",
-		"when": "focusedView == 'workbench.scm'"
-	},
-	{
-		"key": "ctrl+shift+d",
-		"command": "git.unstageAll",
-		"when": "focusedView == 'workbench.scm'"
+		"key": "ctrl+u",
+		"command": "git.unstageSelectedRanges",
+		"when": "activeViewlet == 'workbench.view.scm' && inDiffEditor"
 	},
 	{
 		"key": "ctrl+shift+s",
-		"command": "git.stashStaged",
-		"when": "focusedView == 'workbench.scm'"
+		"command": "git.stageAll",
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
 	},
 	{
 		"key": "ctrl+shift+u",
+		"command": "git.unstageAll",
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
+	},
+	{
+		"key": "ctrl+o",
+		"command": "git.stashStaged",
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
+	},
+	{
+		"key": "ctrl+p",
 		"command": "git.stashPop",
-		"when": "focusedView == 'workbench.scm'"
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
 	},
 	{
 		"key": "ctrl+shift+c",
 		"command": "git.commitAllSigned",
-		"when": "focusedView == 'workbench.scm'"
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "git.push",
+		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
 	}
+	// DEBUGGER
+	// Use F[1-12] keys as they are the standard
+	// {
+	// 	"key": "ctrl+m",
+	// 	"command": "editor.debug.action.toggleBreakpoint",
+	// 	"when": "activeViewlet == 'workbench.view.debug'"
+	// },
 ]
