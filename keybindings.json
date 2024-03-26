@@ -4,7 +4,6 @@
 	// ctrl + => zoom in (whole editor)
 	// ctrl - => zoom out (whole editor)
 	// yy => yank line
-	// dd => delete line
 	// cw => clear word and enter insert mode
 	// shift i => enter insert at the start of the line
 	// shift a => enter insert at the end of the line
@@ -50,6 +49,12 @@
 		"key": "ctrl+b",
 		"command": "-workbench.action.toggleSidebarVisibility"
 	},
+	// FOCUS EDITOR
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "!editorFocus"
+	},
 	// TERMINAL NAVIGATION
 	{
 		"key": "ctrl+shift+t",
@@ -75,11 +80,6 @@
 		"command": "workbench.action.terminal.kill",
 		"when": "terminalIsOpen && terminalFocus"
 	},
-	{
-		"key": "ctrl+l",
-		"command": "workbench.action.focusActiveEditorGroup",
-		"when": "terminalIsOpen && terminalFocus"
-	},
 	// NAVIGATE POPUPS
 	{
 		"key": "ctrl+n",
@@ -90,6 +90,37 @@
 		"key": "ctrl+p",
 		"command": "selectPrevSuggestion",
 		"when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "selectNextCodeAction",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "selectPrevCodeAction",
+		"when": "codeActionMenuVisible"
+	},
+	// SCROLL POPUPS
+	{
+		"key": "h",
+		"command": "editor.action.scrollLeftHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "j",
+		"command": "editor.action.scrollDownHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "k",
+		"command": "editor.action.scrollUpHover",
+		"when": "editorHovered"
+	},
+	{
+		"key": "l",
+		"command": "editor.action.scrollRightHover",
+		"when": "editorHoverFocused"
 	},
 	// FILE TREE
 	{
@@ -104,12 +135,7 @@
 	{
 		"command": "workbench.files.action.refreshFilesExplorer",
 		"key": "ctrl+shift+r",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
-	{
-		"command": "workbench.action.focusNextGroup",
-		"key": "ctrl+l",
-		"when": "filesExplorerFocus && !inputFocus"
+		"when": "filesExplorerFocus"
 	},
 	{
 		"command": "renameFile",
@@ -136,26 +162,10 @@
 		"command": "filesExplorer.paste",
 		"when": "filesExplorerFocus && !inputFocus"
 	},
-	// SCROLL POPUPS
 	{
-		"key": "h",
-		"command": "editor.action.scrollLeftHover",
-		"when": "editorHoverFocused"
-	},
-	{
-		"key": "j",
-		"command": "editor.action.scrollDownHover",
-		"when": "editorHoverFocused"
-	},
-	{
-		"key": "k",
-		"command": "editor.action.scrollUpHover",
-		"when": "editorHovered"
-	},
-	{
-		"key": "l",
-		"command": "editor.action.scrollRightHover",
-		"when": "editorHoverFocused"
+		"key": "d",
+		"command": "deleteFile",
+		"when": "filesExplorerFocus && !inputFocus"
 	},
 	// SEARCH FUNCTION
 	{

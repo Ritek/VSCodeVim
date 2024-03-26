@@ -20,7 +20,7 @@
 	"breadcrumbs.enabled": true,
 	"terminal.integrated.defaultProfile.linux": "bash",
 
-	// Usefull settings
+	// Useful settings
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.linkedEditing": true,
@@ -104,13 +104,14 @@
 		{
 			// VSCodeVim can "prepare" replace but forces the manual mode exit
 			// to perform replacement leader => O => esc
-			"before": ["<leader>", "O"],
-			"commands": ["type", ":%s/1test1/gold/g"]
+			// extension.vim_escape performs that mode change
+			// "before": ["<leader>", "O"],
+			// "commands": ["type", ":%s/1test1/gold/g", "extension.vim_escape"]
 			// 1test1
 		},
 		{
-			"before": ["<leader>", "n"],
-			"commands": ["type", ":s/"]
+			"before": ["<space>", "s"],
+			"after": ["*", ":", "%", "s", "/", "/"]
 		},
 		// Clear the search highlight
 		{
@@ -196,6 +197,10 @@
 		{
 			"before": ["leader", "shift", "/"],
 			"commands": ["editor.action.blockComment"]
+		},
+		{
+			"before": ["<Space>", "s"],
+			"after": [":", "s", "/"]
 		}
 	],
 
@@ -219,17 +224,16 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
+	"editor.tabSize": 2,
 	// Prettier
-	"prettier": {
-		"useTabs": true,
-		"tabWidth": 2,
-		"semi": true,
-		"singleQuote": false,
-		"trailingComma": "es5",
-		"bracketSpacing": true,
-		"bracketSameLine": false,
-		"arrowParens": "always",
-		"endOfLine": "lf"
-	},
-	"editor.tabSize": 2
+	"prettier.enable": true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 2,
+	"prettier.semi": true,
+	"prettier.singleQuote": false,
+	"prettier.trailingComma": "es5",
+	"prettier.bracketSpacing": true,
+	"prettier.bracketSameLine": false,
+	"prettier.arrowParens": "always",
+	"prettier.endOfLine": "lf"
 }
