@@ -49,11 +49,29 @@
 		"key": "ctrl+b",
 		"command": "-workbench.action.toggleSidebarVisibility"
 	},
+	{
+		"key": "ctrl+q",
+		"command": "-extension.vim_winCtrlQ",
+		"when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "-workbench.action.quit"
+	},
+	// GENERAL
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.closeWindow"
+	},
 	// FOCUS EDITOR
 	{
 		"key": "ctrl+l",
 		"command": "workbench.action.focusActiveEditorGroup",
 		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "workbench.action.toggleSidebarVisibility"
 	},
 	// TERMINAL NAVIGATION
 	{
@@ -61,7 +79,7 @@
 		"command": "workbench.action.togglePanel"
 	},
 	{
-		"key": "ctrl+t",
+		"key": "ctrl+shift+n",
 		"command": "workbench.action.terminal.new",
 		"when": "terminalIsOpen && terminalFocus"
 	},
@@ -124,13 +142,8 @@
 	},
 	// FILE TREE
 	{
-		"command": "workbench.action.toggleSidebarVisibility",
-		"key": "ctrl+e"
-	},
-	{
-		"command": "workbench.files.action.focusFilesExplorer",
-		"key": "ctrl+e",
-		"when": "editorTextFocus"
+		"command": "workbench.view.explorer",
+		"key": "ctrl+shift+e"
 	},
 	{
 		"command": "workbench.files.action.refreshFilesExplorer",
@@ -214,6 +227,10 @@
 	// "when": "viewContainer.workbench.view.scm.enabled" will allow git actions if SCM workbench is open even if it is not focused
 	// "when": "focusedView == 'workbench.scm'" will allow actions only if SCM workbench is focused
 	{
+		"command": "workbench.view.scm",
+		"key": "ctrl+shift+g"
+	},
+	{
 		"key": "ctrl+s",
 		"command": "git.stage",
 		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
@@ -262,7 +279,7 @@
 		"key": "ctrl+shift+r",
 		"command": "git.push",
 		"when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
-	}
+	},
 	// DEBUGGER
 	// Use F[1-12] keys as they are the standard
 	// {
@@ -270,4 +287,8 @@
 	// 	"command": "editor.debug.action.toggleBreakpoint",
 	// 	"when": "activeViewlet == 'workbench.view.debug'"
 	// },
+	{
+		"command": "workbench.view.debug",
+		"key": "ctrl+shift+d"
+	}
 ]
