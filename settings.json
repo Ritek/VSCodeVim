@@ -38,6 +38,7 @@
 	"editor.suggest.insertMode": "replace",
 	"editor.cursorSurroundingLines": 8,
 	"vim.smartRelativeLine": true,
+	"vim.highlightedyank.enable": true,
 
 	// Vim
 	"vim.leader": "<Space>",
