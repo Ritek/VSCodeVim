@@ -36,6 +36,8 @@
 	// Vim style settings
 	"editor.lineNumbers": "relative",
 	"editor.suggest.insertMode": "replace",
+	"editor.cursorSurroundingLines": 8,
+	"vim.smartRelativeLine": true,
 
 	// Vim
 	"vim.leader": "<Space>",
@@ -69,6 +71,53 @@
 		{
 			"before": ["leader", "l"],
 			"commands": ["workbench.action.focusRightGroup"]
+		},
+
+		// LSP
+		// Go to Definition
+		{
+			"before": ["g", "d"],
+			"commands": ["editor.action.goToDefinition"]
+		},
+		// Peek Definition
+		{
+			"before": ["g", "p", "d"],
+			"commands": ["editor.action.peekDefinition"]
+		},
+		// Show Hover
+		{
+			"before": ["g", "h"],
+			"commands": ["editor.action.showDefinitionPreviewHover"]
+		},
+		// Go to Implementations
+		{
+			"before": ["g", "i"],
+			"commands": ["editor.action.goToImplementation"]
+		},
+		// Peek Implementations
+		{
+			"before": ["g", "p", "i"],
+			"commands": ["editor.action.peekImplementation"]
+		},
+		// Quick fix
+		{
+			"before": ["g", "q"],
+			"commands": ["editor.action.quickFix"]
+		},
+		// Go to References
+		{
+			"before": ["g", "r"],
+			"commands": ["editor.action.referenceSearch.trigger"]
+		},
+		// Go to Type Definition
+		{
+			"before": ["g", "t"],
+			"commands": ["editor.action.goToTypeDefinition"]
+		},
+		// Peek Type Definition
+		{
+			"before": ["g", "p", "t"],
+			"commands": ["editor.action.peekTypeDefinition"]
 		},
 
 		// NICE TO HAVE
@@ -130,54 +179,6 @@
 		// }
 	],
 
-	"vim.normalModeKeyBindings": [
-		// LSP
-		// Go to Definition
-		{
-			"before": ["g", "d"],
-			"commands": ["editor.action.goToDefinition"]
-		},
-		// Peek Definition
-		{
-			"before": ["g", "p", "d"],
-			"commands": ["editor.action.peekDefinition"]
-		},
-		// Show Hover
-		{
-			"before": ["g", "h"],
-			"commands": ["editor.action.showDefinitionPreviewHover"]
-		},
-		// Go to Implementations
-		{
-			"before": ["g", "i"],
-			"commands": ["editor.action.goToImplementation"]
-		},
-		// Peek Implementations
-		{
-			"before": ["g", "p", "i"],
-			"commands": ["editor.action.peekImplementation"]
-		},
-		// Quick fix
-		{
-			"before": ["g", "q"],
-			"commands": ["editor.action.quickFix"]
-		},
-		// Go to References
-		{
-			"before": ["g", "r"],
-			"commands": ["editor.action.referenceSearch.trigger"]
-		},
-		// Go to Type Definition
-		{
-			"before": ["g", "t"],
-			"commands": ["editor.action.goToTypeDefinition"]
-		},
-		// Peek Type Definition
-		{
-			"before": ["g", "p", "t"],
-			"commands": ["editor.action.peekTypeDefinition"]
-		}
-	],
 	"vim.visualModeKeyBindings": [
 		// Stay in visual mode while indenting
 		{ "before": ["<"], "commands": ["editor.action.outdentLines"] },

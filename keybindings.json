@@ -63,6 +63,14 @@
 		"key": "ctrl+shift+q",
 		"command": "workbench.action.closeWindow"
 	},
+	{
+		"key": "ctrl+alt+j",
+		"command": "editor.action.insertCursorBelow"
+	},
+	{
+		"key": "ctrl+alt+k",
+		"command": "editor.action.insertCursorAbove"
+	},
 	// FOCUS EDITOR
 	{
 		"key": "ctrl+l",
@@ -118,6 +126,26 @@
 		"key": "ctrl+p",
 		"command": "selectPrevCodeAction",
 		"when": "codeActionMenuVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.quickOpenNavigateNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpenNavigatePrevious",
+		"when": "inQuickOpen"
 	},
 	// SCROLL POPUPS
 	{
