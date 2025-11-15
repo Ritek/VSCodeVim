@@ -4,11 +4,10 @@
 	"redhat.telemetry.enabled": false,
 
 	// Font
-	"editor.fontFamily": "JetBrains Mono",
-	// "editor.fontFamily": "FiraCode Mono",
-	"terminal.integrated.fontFamily": "JetBrains Mono",
-	// "terminal.integrated.fontFamily": "FiraCode Mono",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.fontFamily": "JetBrainsMono Nerd Font Mono",
 	"editor.fontLigatures": true,
+	"terminal.integrated.fontLigatures.enabled": true,
 
 	// Theme
 	"workbench.iconTheme": "material-icon-theme",
@@ -237,5 +236,35 @@
 	"prettier.bracketSpacing": true,
 	"prettier.bracketSameLine": false,
 	"prettier.arrowParens": "always",
-	"prettier.endOfLine": "lf"
+	"prettier.endOfLine": "lf",
+
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		},
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"makefile.configureOnOpen": true,
+	"workbench.editorAssociations": {
+		"*.copilotmd": "vscode.markdown.preview.editor",
+		"*.cpp": "default"
+	},
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"typescriptreact": false
+	},
+
+	// snippets
+	"reactSnippets.settings.languageScopes": "typescript,typescriptreact,javascript"
 }
